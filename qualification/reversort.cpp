@@ -1,21 +1,9 @@
 #include <algorithm>
 #include <cstdio>
-#include <cstring>
-#include <iostream>
-#include <map>
-#include <queue>
-#include <set>
-#include <string>
-#include <utility>
-#include <vector>
 
-#define MAXN 2000
-#define INF 0x3f3f3f3f
+#define MAXN 100
 
 using namespace std;
-
-typedef long long ll;
-typedef long double ld;
 
 int l[MAXN];
 
@@ -31,11 +19,6 @@ int main() {
       int j = min_element(l + i, l + n) - l;
       cost += j - i + 1;
       reverse(l + i, l + j + 1);
-      // cerr << "L = ";
-      // for(int k = 0; k < n; k++) {
-      //   cerr << l[k] << " ";
-      // }
-      // cerr << endl;
     }
     printf("Case #%d: %d\n", tc, cost);
   }

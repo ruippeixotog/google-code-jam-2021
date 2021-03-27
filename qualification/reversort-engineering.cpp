@@ -1,22 +1,10 @@
 #include <algorithm>
 #include <cstdio>
-#include <cstring>
-#include <iostream>
-#include <map>
 #include <numeric>
-#include <queue>
-#include <set>
-#include <string>
-#include <utility>
-#include <vector>
 
-#define MAXN 2000
-#define INF 0x3f3f3f3f
+#define MAXN 100
 
 using namespace std;
-
-typedef long long ll;
-typedef long double ld;
 
 int l[MAXN], pcost[MAXN];
 
