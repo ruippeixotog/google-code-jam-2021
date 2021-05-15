@@ -33,7 +33,7 @@ The following is the list of the problems solved. Each problem identifier is spe
 ### Round 1B
 
 * ✓ [A. Broken Clock][round1b1] (`broken-clock`)
-* ✗ [B. Subtransmutation][round1b2] (`subtransmutation`)
+* ✓ [B. Subtransmutation][round1b2] (`subtransmutation`)
 * ✗ [C. Digit Blocks][round1b3] (`digit-blocks`)
 
 [1]: https://codingcompetitions.withgoogle.com/codejam
