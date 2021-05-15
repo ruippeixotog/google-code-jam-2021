@@ -39,7 +39,7 @@ The following is the list of the problems solved. Each problem identifier is spe
 ### Round 2
 
 * ✓ [B. Matrygons][round22] (`matrygons`)
-* ✗ [C. Hidden Pancakes][round23] (`hidden-pancakes`)
+* ✓ [C. Hidden Pancakes][round23] (`hidden-pancakes`)
 
 [1]: https://codingcompetitions.withgoogle.com/codejam
 [qual1]: https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d0a5c

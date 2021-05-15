@@ -1,12 +1,6 @@
-#include <algorithm>
 #include <cstdio>
-#include <cstring>
-#include <iostream>
 #include <map>
-#include <queue>
 #include <set>
-#include <string>
-#include <utility>
 #include <vector>
 
 #define MAXN 100000
@@ -15,7 +9,6 @@
 using namespace std;
 
 typedef long long ll;
-typedef long double ld;
 
 inline ll mmul(ll a, ll b) { return (a * b) % MOD; }
 inline ll madd(ll a, ll b) { return (a + b) % MOD; }
@@ -51,14 +44,17 @@ ll mcomb(ll n, ll k) {
 
 int v[MAXN];
 
-map<int, set<int>> largerThan;
+map<int, set<int>> smaller;
 
-ll calculate(int k) {
-  ll res = mfact(largerThan[k].size());
-  for(int smaller : largerThan[k]) {
-    res = mmul(res, calculate(smaller));
+pair<ll, int> calculate(int k) {
+  ll res = 1; int sz = 0;
+  for(int k2 : smaller[k]) {
+    auto subres = calculate(k2);
+    res = mmul(res, subres.first);
+    res = mmul(res, mcomb(sz + subres.second, sz));
+    sz += subres.second;
   }
-  return res;
+  return {res, 1 + sz};
 }
 
 int main() {
@@ -69,7 +65,7 @@ int main() {
       scanf("%d\n", &v[i]);
     }
 
-    largerThan.clear();
+    smaller.clear();
     bool valid = v[0] == 1;
     vector<int> visible = {0};
     for(int i = 1; valid && i < n; i++) {
@@ -78,24 +74,18 @@ int main() {
         break;
       }
       if(v[i] == 1) {
-        // cerr << i << "->" << visible[0] << endl;
-        largerThan[i].insert(visible[0]);
+        smaller[i].insert(visible[0]);
       } else if(v[i] == visible.size() + 1) {
-        // cerr << visible[visible.size() - 1] << "->" << i << endl;
-        largerThan[visible[visible.size() - 1]].insert(i);
+        smaller[visible[visible.size() - 1]].insert(i);
       } else {
-        // cerr << visible[v[i] - 2] << "-/>" << visible[v[i] - 1] << endl;
-        // cerr << visible[v[i] - 2] << "->" << i << endl;
-        // cerr << i << "->" << visible[v[i] - 1] << endl;
-
-        largerThan[visible[v[i] - 2]].erase(visible[v[i] - 1]);
-        largerThan[visible[v[i] - 2]].insert(i);
-        largerThan[i]                .insert(visible[v[i] - 1]);
+        smaller[visible[v[i] - 2]].erase(visible[v[i] - 1]);
+        smaller[visible[v[i] - 2]].insert(i);
+        smaller[i].insert(visible[v[i] - 1]);
       }
       visible.resize(v[i] - 1);
       visible.push_back(i);
     }
-    printf("Case #%d: %lld\n", tc, valid ? calculate(visible[0]) : 0);
+    printf("Case #%d: %lld\n", tc, valid ? calculate(visible[0]).first : 0);
   }
   return 0;
 }
