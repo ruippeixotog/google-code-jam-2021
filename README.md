@@ -36,6 +36,11 @@ The following is the list of the problems solved. Each problem identifier is spe
 * ✓ [B. Subtransmutation][round1b2] (`subtransmutation`)
 * ✗ [C. Digit Blocks][round1b3] (`digit-blocks`)
 
+### Round 2
+
+* ✓ [B. Matrygons][round22] (`matrygons`)
+* ✗ [C. Hidden Pancakes][round23] (`hidden-pancakes`)
+
 [1]: https://codingcompetitions.withgoogle.com/codejam
 [qual1]: https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d0a5c
 [qual2]: https://codingcompetitions.withgoogle.com/codejam/round/000000000043580a/00000000006d1145
@@ -45,3 +50,5 @@ The following is the list of the problems solved. Each problem identifier is spe
 [round1b1]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000435baf/00000000007ae694
 [round1b2]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000435baf/00000000007ae4aa
 [round1b3]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000435baf/00000000007ae37b
+[round22]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000435915/00000000007dbf06
+[round23]: https://codingcompetitions.withgoogle.com/codejam/round/0000000000435915/00000000007dc20c
